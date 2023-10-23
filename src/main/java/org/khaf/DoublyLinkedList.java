@@ -235,21 +235,4 @@ public class DoublyLinkedList<T> implements Iterable<T>, LinkedList<T> {
 
         return new DoublyLinkedListIterator();
     }
-
-
-    public static void main(String[] args) throws DoublyLinkedListException {
-        DoublyLinkedList<Integer> list = new DoublyLinkedList<>();
-        list.addLast(16);
-        list.addLast(29);
-        list.addLast(45);
-        list.addFirst(480);
-        list.addFirst(455);
-        list.addLast(11);
-
-        System.out.println("List: " + list);
-        /*for (Integer n : list) {
-            System.out.println(n);
-        }*/
-        System.out.println(Arrays.toString(list.toStringArray()));
-    }
 }
