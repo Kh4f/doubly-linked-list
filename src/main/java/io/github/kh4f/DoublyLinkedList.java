@@ -1,4 +1,4 @@
-package org.khaf;
+package io.github.kh4f;
 
 import java.util.Arrays;
 import java.util.Iterator;
@@ -15,10 +15,10 @@ public class DoublyLinkedList<T> implements Iterable<T>, LinkedList<T> {
     private Node<T> tail;
     private int size;
 
-    private static class Node<T> {
-        public T value;
-        public Node<T> prev;
-        public Node<T> next;
+    public static class Node<T> {
+        private T value;
+        private Node<T> prev;
+        private Node<T> next;
 
         public Node(T value) {
             this(value, null, null);
@@ -38,14 +38,8 @@ public class DoublyLinkedList<T> implements Iterable<T>, LinkedList<T> {
         public Node<T> getPrev() {
             return prev;
         }
-        public void setPrev(Node<T> prev) {
-            this.prev = prev;
-        }
         public Node<T> getNext() {
             return next;
-        }
-        public void setNext(Node<T> next) {
-            this.next = next;
         }
     }
 
@@ -67,7 +61,18 @@ public class DoublyLinkedList<T> implements Iterable<T>, LinkedList<T> {
         if (isEmpty()) throw new DoublyLinkedListException("Empty list");
     }
 
-    public T getFirst() throws  DoublyLinkedListException {
+    public Node<T> getHead() throws  DoublyLinkedListException {
+        checkEmpty();
+
+        return head;
+    }
+
+    public Node<T> getTail() throws DoublyLinkedListException {
+        checkEmpty();
+        return tail;
+    }
+
+    public T getFirst() throws DoublyLinkedListException {
         checkEmpty();
         return head.value;
     }
@@ -78,7 +83,7 @@ public class DoublyLinkedList<T> implements Iterable<T>, LinkedList<T> {
     }
 
     public void addFirst(T value) {
-        Node<T> newNode = new Node<T>(value);
+        Node<T> newNode = new Node<>(value);
         if (isEmpty()) {
             head = newNode;
             tail = newNode;
@@ -95,7 +100,7 @@ public class DoublyLinkedList<T> implements Iterable<T>, LinkedList<T> {
             addFirst(value);
             return;
         }
-        tail.next = new Node<T>(value, tail,null);
+        tail.next = new Node<>(value, tail, null);
         tail = tail.next;
         size++;
     }
