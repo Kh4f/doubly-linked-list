@@ -176,6 +176,8 @@ public class DoublyLinkedList<T> implements Iterable<T>, LinkedList<T> {
         Node<T> next = curr.next;
         prev.next = next;
         next.prev = prev;
+
+        size--;
     }
 
     private Node<T> getNode(int index) throws DoublyLinkedListException {
