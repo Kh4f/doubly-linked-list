@@ -1,5 +1,6 @@
 package io.github.kh4f;
 
+import util.LinkedList;
 import java.util.Arrays;
 import java.util.Iterator;
 
@@ -63,7 +64,6 @@ public class DoublyLinkedList<T> implements Iterable<T>, LinkedList<T> {
 
     public Node<T> getHead() throws  DoublyLinkedListException {
         checkEmpty();
-
         return head;
     }
 
