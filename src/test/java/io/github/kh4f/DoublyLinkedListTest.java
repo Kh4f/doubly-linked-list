@@ -1,9 +1,7 @@
 package io.github.kh4f;
 
 import org.junit.jupiter.api.*;
-
 import java.util.LinkedList;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 public class DoublyLinkedListTest {
