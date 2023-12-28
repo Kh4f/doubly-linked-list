@@ -1,0 +1,19 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="DoublyLinkedListTest" type="JUnit" factoryName="JUnit">
+    <module name="doubly-linked-list" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="io.github.kh4f.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <option name="PACKAGE_NAME" value="io.github.kh4f" />
+    <option name="MAIN_CLASS_NAME" value="io.github.kh4f.DoublyLinkedListTest" />
+    <option name="METHOD_NAME" value="testRemoveLast" />
+    <option name="TEST_OBJECT" value="class" />
+    <option name="VM_PARAMETERS" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

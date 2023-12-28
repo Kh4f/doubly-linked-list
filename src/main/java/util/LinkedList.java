@@ -12,7 +12,7 @@ public interface LinkedList<T> {
     T getLast() throws Exception;
     void addFirst(T value);
     void addLast(T value);
-    void removeAll() throws Exception;
+    void clear() throws Exception;
     void removeFirst() throws Exception;
     void removeLast() throws Exception;
     void insert(int index, T value) throws Exception;

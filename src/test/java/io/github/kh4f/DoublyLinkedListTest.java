@@ -52,7 +52,7 @@ public class DoublyLinkedListTest {
 
     @Test
     public void testRemoveAll() throws DoublyLinkedList.DoublyLinkedListException {
-        myList.removeAll();
+        myList.clear();
         origList.clear();
     }
 

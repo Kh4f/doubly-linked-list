@@ -68,6 +68,12 @@ public class DoublyLinkedList<T> implements Iterable<T>, LinkedList<T> {
         if (isEmpty()) throw new DoublyLinkedListException("Empty list");
     }
 
+    public void addAll(DoublyLinkedList<T> newList) {
+        for (T value : newList) {
+            addLast(value);
+        }
+    }
+
     public Node<T> getHead() throws  DoublyLinkedListException {
         checkEmpty();
         return head;
@@ -122,6 +128,18 @@ public class DoublyLinkedList<T> implements Iterable<T>, LinkedList<T> {
         size--;
     }
 
+    public T poll() throws DoublyLinkedListException {
+        T value = head.value;
+        removeFirst();
+        return value;
+    }
+
+    public T poll(int index) throws DoublyLinkedListException {
+        T value = get(index);
+        remove(index);
+        return value;
+    }
+
     public void removeLast() throws DoublyLinkedListException {
         checkEmpty();
         tail = tail.prev;
@@ -133,7 +151,7 @@ public class DoublyLinkedList<T> implements Iterable<T>, LinkedList<T> {
         size--;
     }
 
-    public void removeAll() throws DoublyLinkedListException {
+    public void clear() throws DoublyLinkedListException {
         while (!isEmpty()) {
             removeLast();
         }
